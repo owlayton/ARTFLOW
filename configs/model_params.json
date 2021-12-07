@@ -1,0 +1,135 @@
+{
+    "random_seed": 0,
+    "ode":
+    {
+        "num_time_steps": 10,
+        "num_frames": -1
+    },
+    "input":
+    {
+        "dims": [512, 512]
+    },
+    "mt_input":
+    {
+        "label": "mtInputLayer",
+        "plot":
+        {
+            "net_input": false
+        },
+        "num_cells": 5000,
+        "radius": 15,
+        "speed":
+        {
+            "method": "logGaussian",
+            "sigma":
+            {
+                "method": "sample",
+                "mean": 1.16,
+                "std": 0.5
+            },
+            "offset":
+            {
+                "method": "sample",
+                "lambda": 0.25
+            },
+            "preferred_speed":
+            {
+                "method": "octave",
+                "num_bins": 5,
+                "first_bin_width": 1.5,
+                "min": 0.5,
+                "max": 32
+            }
+        },
+        "direction":
+        {
+            "method": "uniform",
+            "sigma":
+            {
+                "method": "constant",
+                "value": 3
+            }
+        },
+        "ode":
+        {
+            "decay_rate": 0.1,
+            "upper_bound": 2.5
+        }
+    },
+    "mt_layer_2":
+    {
+        "label": "mtLayer2",
+        "unit_type": "art",
+        "num_sectors": [8, 8],
+        "input_transform":
+        {
+            "sigmoid":
+            {
+                "do": true,
+                "mid": 0.007
+            }
+        },
+        "plot":
+        {
+            "weights": false
+        },
+        "art":
+        {
+            "verbose": false,
+            "alpha": 0.01,
+            "beta": 1,
+            "do_fast_learning": true,
+            "beta_slow_recode": 0.1,
+            "p": 0.65,
+            "num_epochs": 1,
+            "predict_fun": "softmax",
+            "C_max": 500
+        },
+        "hebb":
+        {
+            "verbose": false,
+            "lr": 0.01,
+            "num_cells": 19,
+            "threshold": 0.01,
+            "act_fun": "logistic"
+        }
+    },
+    "mstd_input_layer":
+    {
+        "label": "mstdInputLayer",
+        "unit_type": "art",
+        "num_sectors": [1, 1],
+        "input_transform":
+        {
+            "sigmoid":
+            {
+                "do": false,
+                "mid": 0.007
+            }
+        },
+        "plot":
+        {
+            "weights": true
+        },
+        "art":
+        {
+            "verbose": false,
+            "alpha": 0.01,
+            "beta": 1,
+            "do_fast_learning": true,
+            "beta_slow_recode": 0.1,
+            "p": 0.85,
+            "num_epochs": 1,
+            "predict_fun": "raw",
+            "C_max": 500
+        },
+        "hebb":
+        {
+            "verbose": false,
+            "lr": 0.01,
+            "num_cells": 24,
+            "threshold": 0.01,
+            "act_fun": "logistic"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "io":
+    {
+        "clear_cache": true,
+        "export":
+        {
+            "do": true
+        },
+        "nFrames": 10,
+        "num_stimuli": -1
+    },
+    "simulate":
+    {
+        "parallel": true,
+        "num_parallel_nets": 6
+    },
+    "verbose":
+    {
+        "stimuli": false,
+        "modes": true,
+        "timeit": true
+    }
+}

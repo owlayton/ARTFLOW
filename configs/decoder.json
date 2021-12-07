@@ -1,0 +1,41 @@
+{
+    "io":
+    {
+        "features_filename": "mstdInputLayer_all_acts.mat"
+    },
+    "arch":
+    {
+        "num_outputs": 2,
+        "dense":
+        {
+            "num": 0,
+            "units": [250]
+        },
+        "act":
+        {
+            "num": 0,
+            "type": ["relu"]
+        }
+    },
+    "train":
+    {
+        "epochs": 20000,
+        "mini_batch_sz": 250,
+        "validation":
+        {
+            "split_sz": 0.1,
+            "frequency": 50,
+            "early_stopping": 
+            {
+                "do": true,
+                "patience": 5
+            }
+        }
+    },
+    "plot":
+    {
+        "network_graph": false,
+        "train": true,
+        "features": false
+    }
+}
