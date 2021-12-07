@@ -7,5 +7,4 @@ Code for Layton, OW. ARTFLOW: A Fast, Biologically Inspired Neural Network That 
 ## Notes
 
 1. `simulateModel.m` trains the neural network on the provided 3D dot cloud (T) dataset and predicts heading on the test set.
-2. Before running the simulation, 3D dot cloud (T) dataset should be unzipped from `DotCloud3DT.zip` to `data/DotCloud3DT`.
-3. MATLAB R2021b is required to run the code.
+2. MATLAB R2021b is required to run the code.
